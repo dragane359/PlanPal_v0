@@ -4,6 +4,42 @@ import 'package:flutter/material.dart';
 import 'package:flutterfire_samples/screens/user_info_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+//import '/Users/ganeshpremakumar/Downloads/flutterfire-samples-google-sign-in/android/app/google-services.json';
+
+class AuthenticationHelper {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  get user => _auth.currentUser;
+
+  //SIGN UP METHOD
+  Future signUp({String email = 'email', String password = 'password'}) async {
+    try {
+      await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return null;
+    } on FirebaseAuthException catch (e) {
+      return e.message;
+    }
+  }
+
+  //SIGN IN METHOD
+  Future signIn({String email = 'email', String password = 'password'}) async {
+    try {
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+      return null;
+    } on FirebaseAuthException catch (e) {
+      return e.message;
+    }
+  }
+
+  //SIGN OUT METHOD
+  Future signOut() async {
+    await _auth.signOut();
+
+    print('signout');
+  }
+}
 
 class Authentication {
   static SnackBar customSnackBar({required String content}) {
