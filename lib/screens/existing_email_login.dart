@@ -51,8 +51,8 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
       tag: 'hero',
       child: CircleAvatar(
         backgroundColor: CustomColors.purplee,
-        radius: 48.0,
-        child: Image.asset('assets/firebase_logo.png'),
+        radius: 90.0,
+        child: Image.asset('assets/planpallogo.png'),
       ),
     );
 
@@ -99,7 +99,6 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
       ),
     );
 
-
     final forgotLabel = FlatButton(
       child: Text(
         'Forgot password?',
@@ -108,46 +107,39 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
       onPressed: () {},
     );
 
-  final loginButton = Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.0),
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+    final loginButton = FlatButton(
+      padding: EdgeInsets.zero,
+        child: Text(
+          'Log in!',
+          style: TextStyle(color: Colors.black54),
         ),
         onPressed: () {
-          if (_formKey.currentState!.validate()) { 
-            FirebaseAuth.instance.signInWithEmailAndPassword(email:emailController.text, password:passwordController.text)
+          if (_formKey.currentState!.validate()) {
+            FirebaseAuth.instance
+                .signInWithEmailAndPassword(
+                    email: emailController.text,
+                    password: passwordController.text)
                 .then((uid) => Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              EmailNextScreen())))
+                    MaterialPageRoute(builder: (context) => EmailNextScreen())))
                 .catchError((error) => {processError(error)});
           }
-        },
-        padding: EdgeInsets.all(12),
-        color: Colors.lightBlueAccent,
-        child: Text('Log In', style: TextStyle(color: Colors.white)),
-      ),
-    );;
-      
+        });
 
-    final registerButton = Padding(
-      padding: EdgeInsets.zero,
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        onPressed: () {
-          Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              EmailNextScreen()));
-        },
-        padding: EdgeInsets.all(12),
-        color: Colors.lightGreen,
-        child: Text('Register', style: TextStyle(color: Colors.white)),
-      ),
-    );
+    // final registerButton = Padding(
+    //   padding: EdgeInsets.zero,
+    //   child: RaisedButton(
+    //     shape: RoundedRectangleBorder(
+    //       borderRadius: BorderRadius.circular(24),
+    //     ),
+    //     onPressed: () {
+    //       Navigator.of(context).pushReplacement(
+    //           MaterialPageRoute(builder: (context) => EmailNextScreen()));
+    //     },
+    //     padding: EdgeInsets.all(12),
+    //     color: Colors.lightGreen,
+    //     child: Text('Register', style: TextStyle(color: Colors.white)),
+    //   ),
+    // );
 
     return Scaffold(
         backgroundColor: CustomColors.purplee,

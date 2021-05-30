@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/create_account_button.dart';
-//import 'package:flutterfire_samples/widgets/create_account_button.dart';
 import 'package:flutterfire_samples/widgets/google_sign_in_button.dart';
 import 'package:flutterfire_samples/widgets/sign_in_button.dart';
 
@@ -35,7 +34,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     Flexible(
                       flex: 1,
                       child: Image.asset(
-                        'assets/firebase_logo.png',
+                        'assets/planpallogo.png',
                         height: 160,
                       ),
                     ),
