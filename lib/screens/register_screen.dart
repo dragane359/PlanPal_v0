@@ -59,7 +59,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Register',
-                      style: TextStyle(fontSize: 36.0, color: Colors.black87),
+                      style: TextStyle(fontSize: 36.0, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -180,7 +180,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     padding: EdgeInsets.symmetric(vertical: 8.0),
                     child: TextFormField(
                       autofocus: false,
-                      obscureText: false,
+                      obscureText: true,
                       controller: confirmPasswordTextEditController,
                       focusNode: _confirmPasswordFocus,
                       textInputAction: TextInputAction.done,
@@ -222,7 +222,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         }
                       },
                       padding: EdgeInsets.all(12),
-                      color: Colors.lightGreen,
+                      color: Colors.red,
                       child: Text('Sign Up'.toUpperCase(),
                           style: TextStyle(color: Colors.white)),
                     ),
@@ -232,7 +232,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: FlatButton(
                         child: Text(
                           'Cancel',
-                          style: TextStyle(color: Colors.black54),
+                          style: TextStyle(color: Colors.white),
                         ),
                         onPressed: () {
                           Navigator.pop(context);
