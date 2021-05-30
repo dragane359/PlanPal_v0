@@ -16,6 +16,9 @@ Coordinating schedules are often a hassle as work and study schedules are subjec
 Aim
 
 We hope to be able to provide users with a single place where they can view the schedules of their friends and families. Providing them a platform for them to come up with common timing to make events happen. Here, they will be able to join different groups to schedule and plan a meetup. Additional features are tailor-made to ensure that the entirety of the meeting up is hassle-free.
+
+Our Features
+
 <table>
 <tbody>
 <tr>
@@ -204,3 +207,51 @@ We hope to be able to provide users with a single place where they can view the 
 </tbody>
 </table>
 
+Timeline and Schedule
+
+<table>
+<tbody>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Milestone I</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Milestone II</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Milestone III</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Create the log-in and sign up features using Firebase as our back-end database.</span></li>
+</ol>
+</td>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Finalise log-in and sign-up features, with added support for &ldquo;Forgot Password&rdquo;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Complete the implementation of groups and event creation.</span></li>
+</ol>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Complete the common slot feature.</span></li>
+</ol>
+</td>
+<td>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Complete the implementation of the payment tracker.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /><br /></p>
+Resources Used
+
+https://blog.codemagic.io/flutter-web-firebase-authentication-and-google-sign-in/
+https://github.com/kevinjnguyen/flutter-firebase-registration-ui 
+https://medium.com/swlh/flutter-login-registration-using-firebase-1bef34007b91
+https://www.bacancytechnology.com/blog/email-authentication-using-firebase-auth-and-flutter
+https://github.com/lohanidamodar/flutter_ui_challenges
+https://blog.codemagic.io/firebase-authentication-google-sign-in-using-flutter/
+https://pusher.com/tutorials/login-ui-flutter
