@@ -108,29 +108,42 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
       ),
       onPressed: () {},
     );
-
-    final loginButton = Padding(
-      padding: EdgeInsets.zero,
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        onPressed: () {
-          if (_formKey.currentState!.validate()) {
-            FirebaseAuth.instance
-                .signInWithEmailAndPassword(
-                    email: emailController.text,
-                    password: passwordController.text)
-                .then((uid) => Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => EmailNextScreen())))
-                .catchError((error) => {processError(error)});
-          }},
-           padding: EdgeInsets.all(12),
-            color: Colors.red,
-            child: Text('Log in!', style: TextStyle(color: Colors.white),
-        )
+    final cancel = Padding(
+        padding: EdgeInsets.zero,
+        child: FlatButton(
+          child: Text(
+            'Cancel',
+            style: TextStyle(color: Colors.white),
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ));
-      
+    final loginButton = Padding(
+        padding: EdgeInsets.zero,
+        child: RaisedButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                FirebaseAuth.instance
+                    .signInWithEmailAndPassword(
+                        email: emailController.text,
+                        password: passwordController.text)
+                    .then((uid) => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (context) => EmailNextScreen())))
+                    .catchError((error) => {processError(error)});
+              }
+            },
+            padding: EdgeInsets.all(12),
+            color: Colors.red,
+            child: Text(
+              'Log in!',
+              style: TextStyle(color: Colors.white),
+            )));
+
     // final registerButton = Padding(
     //   padding: EdgeInsets.zero,
     //   child: RaisedButton(
@@ -141,9 +154,9 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
     //       Navigator.of(context).pushReplacement(
     //           MaterialPageRoute(builder: (context) => EmailNextScreen()));
     //     },
-        // padding: EdgeInsets.all(12),
-        // color: Colors.lightGreen,
-        // child: Text('Register', style: TextStyle(color: Colors.white)),
+    // padding: EdgeInsets.all(12),
+    // color: Colors.lightGreen,
+    // child: Text('Register', style: TextStyle(color: Colors.white)),
     //   ),
     // );
 
@@ -166,7 +179,9 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
                 SizedBox(height: 24.0),
                 forgotLabel,
                 SizedBox(height: 24.0),
-                loginButton
+                loginButton,
+                SizedBox(height: 24.0),
+                cancel
               ],
             ),
           ),
