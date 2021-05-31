@@ -222,7 +222,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         }
                       },
                       padding: EdgeInsets.all(12),
-                      color: Colors.red,
+                      color: Colors.pink,
                       child: Text('Sign Up'.toUpperCase(),
                           style: TextStyle(color: Colors.white)),
                     ),

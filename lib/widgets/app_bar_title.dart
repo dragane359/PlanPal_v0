@@ -10,16 +10,9 @@ class AppBarTitle extends StatelessWidget {
       children: [
         Image.asset(
           'assets/planpallogo.png',
-          height: 20,
+          height: 50,
         ),
-        SizedBox(width: 8),
-        Text(
-          'PlanPal',
-          style: TextStyle(
-            color: CustomColors.firebaseYellow,
-            fontSize: 18,
-          ),
-        ),
+        SizedBox(width: 50),
       ],
     );
   }

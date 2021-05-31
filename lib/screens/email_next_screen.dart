@@ -33,7 +33,7 @@ class EmailNextScreen extends StatelessWidget {
                     Text(
                       'You are currently logged into your account!',
                       style: TextStyle(
-                        color: CustomColors.firebaseOrange,
+                        color: CustomColors.lightpink,
                         fontSize: 40,
                       ),
                     )

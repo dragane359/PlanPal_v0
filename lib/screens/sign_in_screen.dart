@@ -42,14 +42,14 @@ class _SignInScreenState extends State<SignInScreen> {
                     Text(
                       'PlanPal',
                       style: TextStyle(
-                        color: CustomColors.firebaseYellow,
+                        color: CustomColors.teal,
                         fontSize: 40,
                       ),
                     ),
                     Text(
                       'Meetups made easy!',
                       style: TextStyle(
-                        color: CustomColors.firebaseOrange,
+                        color: CustomColors.lightpink,
                         fontSize: 40,
                       ),
                     ),
