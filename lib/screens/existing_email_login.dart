@@ -9,6 +9,7 @@ import 'package:flutterfire_samples/res/custom_colors.dart';
 import 'package:flutter/material.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterfire_samples/screens/email_next_screen.dart';
+import 'package:flutterfire_samples/screens/home_screen.dart';
 
 class ExistingEmailLogin extends StatefulWidget {
   static String tag = 'login-page';
@@ -55,7 +56,7 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
       padding: EdgeInsets.all(8.0),
       child: Text(
         '$_errorMessage',
-        style: TextStyle(fontSize: 14.0, color: Colors.red),
+        style: TextStyle(color: Colors.red),
         textAlign: TextAlign.center,
       ),
     );
@@ -127,7 +128,7 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
                         password: passwordController.text)
                     .then((uid) => Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                            builder: (context) => EmailNextScreen())))
+                            builder: (context) => HomeScreen())))
                     .catchError((error) => {processError(error)});
               }
             },
@@ -175,7 +176,9 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
                 SizedBox(height: 24.0),
                 loginButton,
                 SizedBox(height: 24.0),
-                cancel
+                cancel,
+                SizedBox(height: 24.0),
+                errorMessage
               ],
             ),
           ),

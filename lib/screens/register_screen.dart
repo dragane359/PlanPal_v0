@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-// ignore: duplicate_import
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
+import 'package:flutterfire_samples/screens/home_screen.dart';
 import 'package:flutterfire_samples/screens/user_info_screen.dart';
 import 'package:flutterfire_samples/screens/email_next_screen.dart';
 
@@ -216,7 +215,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              EmailNextScreen()),
+                                              HomeScreen()),
                                     ),
                                   });
                         }
