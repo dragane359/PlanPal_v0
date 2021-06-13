@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfire_samples/screens/existing_email_login.dart';
 //import 'package:flutterfire_samples/widgets/create_account_button.dart';
-import 'package:flutterfire_samples/screens/register_screen.dart';
 
 
 class SigninButton extends StatelessWidget {

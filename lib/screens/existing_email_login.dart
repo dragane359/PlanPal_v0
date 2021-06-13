@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 //import 'package:registration/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutterfire_samples/screens/email_next_screen.dart';
 //import 'package:registration/home_page.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
 // ignore: duplicate_import
 import 'package:flutter/material.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutterfire_samples/screens/email_next_screen.dart';
 import 'package:flutterfire_samples/screens/home_screen.dart';
+import 'package:flutterfire_samples/utils/database.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutterfire_samples/models/usermodel.dart';
+
+final FirebaseFirestore db = FirebaseFirestore.instance;
 
 class ExistingEmailLogin extends StatefulWidget {
   static String tag = 'login-page';
@@ -127,8 +130,12 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
                         email: emailController.text,
                         password: passwordController.text)
                     .then((uid) => Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                            builder: (context) => HomeScreen())))
+                        MaterialPageRoute(builder: (context) => HomeScreen())))
+                        .then((uid) =>
+                        db.collection("users")
+                        .doc(uid)
+                        .set({'email': emailController.text,
+                        "id":uid}))
                     .catchError((error) => {processError(error)});
               }
             },
