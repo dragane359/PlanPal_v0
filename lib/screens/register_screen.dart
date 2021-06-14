@@ -221,7 +221,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              HomeScreen()),
+                                              HomeScreen(user:x.user)),
                                     ),
                                   });
                         }

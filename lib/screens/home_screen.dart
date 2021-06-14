@@ -3,9 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
 
 //import 'package:registration/home_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutterfire_samples/screens/sign_in_screen.dart';
+import 'package:flutterfire_samples/utils/authentication.dart';
+import 'package:flutterfire_samples/widgets/app_bar_title.dart';
 
 class HomeScreen extends StatefulWidget {
-  static String tag = 'home-page';
+  const HomeScreen({Key? key, required user})
+      : _user = user,
+        super(key: key);
+  final User _user;
   @override
   _HomeScreenState createState() => new _HomeScreenState();
 }

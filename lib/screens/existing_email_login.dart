@@ -13,6 +13,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterfire_samples/models/usermodel.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+var y;
 
 class ExistingEmailLogin extends StatefulWidget {
   static String tag = 'login-page';
@@ -124,21 +125,24 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
               borderRadius: BorderRadius.circular(24),
             ),
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                FirebaseAuth.instance
-                    .signInWithEmailAndPassword(
-                        email: emailController.text,
-                        password: passwordController.text)
-                    .then((uid) => _firestore
+                        if (_formKey.currentState!.validate()) {
+                          _firebaseAuth
+                              .signInWithEmailAndPassword(
+                                  email: emailController.text,
+                                  password: passwordController.text)
+                              .then((x) => {
+                                _firestore
                         .collection("users")
-                        .doc(uid.user!.uid)
-                        .set({'email': emailController.text}));
-                Navigator.of(context)
-                    .pushReplacement(
-                        MaterialPageRoute(builder: (context) => HomeScreen()))
-                    .catchError((error) => {processError(error)});
-              }
-            },
+                        .doc(x.user!.uid)
+                        .set({'email': emailController.text}),
+                                    Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              HomeScreen(user:x.user)),
+                                    ),
+                                  });
+                        }
+                      },
             padding: EdgeInsets.all(12),
             color: Colors.pink,
             child: Text(
