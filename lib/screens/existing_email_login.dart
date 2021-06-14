@@ -12,7 +12,7 @@ import 'package:flutterfire_samples/utils/database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterfire_samples/models/usermodel.dart';
 
-final FirebaseFirestore db = FirebaseFirestore.instance;
+final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 class ExistingEmailLogin extends StatefulWidget {
   static String tag = 'login-page';
@@ -129,13 +129,13 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
                     .signInWithEmailAndPassword(
                         email: emailController.text,
                         password: passwordController.text)
-                    .then((uid) => Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => HomeScreen())))
-                        .then((uid) =>
-                        db.collection("users")
-                        .doc(uid)
-                        .set({'email': emailController.text,
-                        "id":uid}))
+                    .then((uid) => _firestore
+                        .collection("users")
+                        .doc(uid.user!.uid)
+                        .set({'email': emailController.text}));
+                Navigator.of(context)
+                    .pushReplacement(
+                        MaterialPageRoute(builder: (context) => HomeScreen()))
                     .catchError((error) => {processError(error)});
               }
             },

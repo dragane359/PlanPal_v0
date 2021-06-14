@@ -40,7 +40,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'PlanPal',
+                      'PlanPall',
                       style: TextStyle(
                         color: CustomColors.teal,
                         fontSize: 40,

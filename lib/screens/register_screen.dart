@@ -4,8 +4,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
 import 'package:flutterfire_samples/screens/home_screen.dart';
+import 'package:flutterfire_samples/utils/database.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutterfire_samples/models/usermodel.dart';
 
 //import 'package:registration/home_page.dart';
+final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 class RegisterScreen extends StatefulWidget {
   static String tag = 'register-page';
@@ -210,6 +214,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   email: emailTextEditController.text,
                                   password: passwordTextEditController.text)
                               .then((x) => {
+                                _firestore
+                        .collection("users")
+                        .doc(x.user!.uid)
+                        .set({'email': emailTextEditController.text}),
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (context) =>
