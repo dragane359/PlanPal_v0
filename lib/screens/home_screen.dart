@@ -4,6 +4,7 @@ import 'package:flutterfire_samples/res/custom_colors.dart';
 
 //import 'package:registration/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutterfire_samples/screens/my_groups.dart';
 import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
@@ -18,6 +19,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late User _user;
+  @override
+  void initState() {
+    _user = widget._user;
+
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RaisedButton(
                   color: Colors.pink,
                   shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
+                    borderRadius: BorderRadius.circular(24),
+                  ),
                   child: Text(
                     'My Profile',
                     style: TextStyle(color: Colors.white),
@@ -55,14 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RaisedButton(
                   color: Colors.pink,
                   shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
+                    borderRadius: BorderRadius.circular(24),
+                  ),
                   child: Text(
                     'My Groups',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => MyGroups(user: _user)),
+                    );
                   },
                 )),
             Padding(
@@ -70,8 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RaisedButton(
                   color: Colors.pink,
                   shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
+                    borderRadius: BorderRadius.circular(24),
+                  ),
                   child: Text(
                     'My Payments',
                     style: TextStyle(color: Colors.white),
@@ -85,8 +96,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RaisedButton(
                   color: Colors.pink,
                   shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
+                    borderRadius: BorderRadius.circular(24),
+                  ),
                   child: Text(
                     'Calendar of Events',
                     style: TextStyle(color: Colors.white),
@@ -100,8 +111,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RaisedButton(
                   color: Colors.pink,
                   shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
+                    borderRadius: BorderRadius.circular(24),
+                  ),
                   child: Text(
                     'Friendlist',
                     style: TextStyle(color: Colors.white),
@@ -115,8 +126,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RaisedButton(
                   color: Colors.pink,
                   shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
+                    borderRadius: BorderRadius.circular(24),
+                  ),
                   child: Text(
                     'Settings',
                     style: TextStyle(color: Colors.white),
