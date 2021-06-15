@@ -8,6 +8,8 @@ import 'package:flutterfire_samples/screens/create_group_screen.dart';
 import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
+import 'package:flutterfire_samples/screens/join_group_screen.dart';
+
 
 class MyGroups extends StatefulWidget {
   const MyGroups({Key? key, required User user})
@@ -73,7 +75,10 @@ class _MyGroupsState extends State<MyGroups> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => JoinGroup(user: _user)),
+                    );
                   },
                 )),
           ],
