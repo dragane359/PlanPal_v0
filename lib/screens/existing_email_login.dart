@@ -131,10 +131,6 @@ class _ExistingEmailLoginState extends State<ExistingEmailLogin> {
                                   email: emailController.text,
                                   password: passwordController.text)
                               .then((x) => {
-                                _firestore
-                        .collection("users")
-                        .doc(x.user!.uid)
-                        .set({'email': emailController.text}),
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (context) =>

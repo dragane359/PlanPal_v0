@@ -6,8 +6,11 @@ import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 var y;
+
 class CreateGroup extends StatefulWidget {
   const CreateGroup({Key? key, required User user})
       : _user = user,
@@ -27,15 +30,16 @@ class _CreateGroupState extends State<CreateGroup> {
       _errorMessage = '';
     });
   }
+
   late User _user;
   @override
   void initState() {
     _user = widget._user;
 
     super.initState();
-  
   }
-@override
+
+  @override
   Widget build(BuildContext context) {
     final node = FocusScope.of(context);
 
@@ -49,7 +53,6 @@ class _CreateGroupState extends State<CreateGroup> {
         child: Image.asset('assets/planpallogo.png'),
       ),
     );
-
 
     final email = TextFormField(
       keyboardType: TextInputType.name,
@@ -75,14 +78,21 @@ class _CreateGroupState extends State<CreateGroup> {
             Navigator.pop(context);
           },
         ));
-    final loginButton = Padding(
+    final CreateGroupButton = Padding(
         padding: EdgeInsets.zero,
         child: RaisedButton(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
             onPressed: () {
-                      },
+              _firestore.collection("groups").doc(grpnameController.text).set({
+                'members': [
+                  _user.uid,
+                ]
+              });
+              _firestore.collection("users").doc(_user.uid).update({
+                'mygroups':FieldValue.arrayUnion([grpnameController.text,])
+            });},
             padding: EdgeInsets.all(12),
             color: Colors.pink,
             child: Text(
@@ -119,7 +129,7 @@ class _CreateGroupState extends State<CreateGroup> {
                 SizedBox(height: 24.0),
                 email,
                 SizedBox(height: 8.0),
-                loginButton,
+                CreateGroupButton,
                 SizedBox(height: 24.0),
                 cancel,
                 SizedBox(height: 24.0),
@@ -134,6 +144,5 @@ class _CreateGroupState extends State<CreateGroup> {
   //       email: email, password: password).then((credentials) {
   //   String userID = credentials.user.uid;
   // };
-
 
 }
