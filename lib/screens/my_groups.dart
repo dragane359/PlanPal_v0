@@ -4,6 +4,7 @@ import 'package:flutterfire_samples/res/custom_colors.dart';
 
 //import 'package:registration/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutterfire_samples/screens/create_group_screen.dart';
 import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
@@ -54,7 +55,10 @@ class _MyGroupsState extends State<MyGroups> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => CreateGroup(user: _user)),
+                    );
                   },
                 )),
             Padding(
