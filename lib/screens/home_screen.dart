@@ -18,6 +18,8 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => new _HomeScreenState();
 }
 
+final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
 class _HomeScreenState extends State<HomeScreen> {
   late User _user;
   @override
@@ -26,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,11 +132,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(24),
                   ),
                   child: Text(
-                    'Settings',
+                    'Log Out',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    _firebaseAuth.signOut();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignInScreen(),
+                      ),
+                    );
                   },
                 )),
           ],
