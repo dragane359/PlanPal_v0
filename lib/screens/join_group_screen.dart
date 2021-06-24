@@ -6,6 +6,8 @@ import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutterfire_samples/screens/my_groups.dart';
+
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 var y;
@@ -75,7 +77,12 @@ class _JoinGroupState extends State<JoinGroup> {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => MyGroups(user: _user),
+                  ),
+            );
           },
         ));
     final JoinGroupButton = Padding(
@@ -107,7 +114,12 @@ class _JoinGroupState extends State<JoinGroup> {
                         print("No such document!")
                       }
                   });
-              
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => MyGroups(user: _user),
+                  ),
+            );
             },
             padding: EdgeInsets.all(12),
             color: Colors.pink,

@@ -92,7 +92,7 @@ _firestore.collection("users").doc(_user.uid).
                     borderRadius: BorderRadius.circular(24),
                   ),
                   child: Text(
-                    'Join A Groupp',
+                    'Join A Group',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
@@ -124,7 +124,7 @@ _firestore.collection("users").doc(_user.uid).
                   ),
             );
           },
-                              title: Text(snapshot.data!['mygroups'][index]),
+                              title: Center(child: Text(snapshot.data!['mygroups'][index])),
                             );
                           });
                     }

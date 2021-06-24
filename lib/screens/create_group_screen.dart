@@ -2,6 +2,7 @@ import 'package:flutterfire_samples/res/custom_colors.dart';
 import 'package:flutter/material.dart';
 //import 'package:registration/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutterfire_samples/screens/my_groups.dart';
 import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
@@ -75,7 +76,12 @@ class _CreateGroupState extends State<CreateGroup> {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => MyGroups(user: _user),
+                  ),
+            );
           },
         ));
     final CreateGroupButton = Padding(
@@ -92,7 +98,14 @@ class _CreateGroupState extends State<CreateGroup> {
               });
               _firestore.collection("users").doc(_user.uid).update({
                 'mygroups':FieldValue.arrayUnion([grpnameController.text,])
-            });},
+            });
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => MyGroups(user: _user),
+                  ),
+            );
+            },
             padding: EdgeInsets.all(12),
             color: Colors.pink,
             child: Text(
