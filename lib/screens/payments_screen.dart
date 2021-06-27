@@ -10,6 +10,9 @@ import 'package:flutterfire_samples/screens/pay_screen.dart';
 import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
 
 class PaymentsScreen extends StatefulWidget {
   const PaymentsScreen({Key? key, required user})
@@ -84,6 +87,35 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                     );
                   },
                 )),
+            StreamBuilder<QuerySnapshot>(
+        stream: _firestore
+             .collection('payments')
+             .doc(_user.uid)
+             .collection('friends')
+             .snapshots(),
+        builder: (BuildContext context,
+              AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (snapshot.hasData) {
+                        return ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          itemCount: snapshot.data!.docs.length,
+                          itemBuilder: (context,index){
+                            return ListTile(
+                              onTap: () {
+          },    
+                              title: Center(child: Text(snapshot.data!.docs[index].id.toString())),
+                              subtitle: Column(
+                                children: <Widget>[
+                                Text('I owe: ' + snapshot.data!.docs[index]['I owe'].toString()+' dollars'),
+                              Text('They owe me: '+snapshot.data!.docs[index]['They owe me'].toString()+' dollars')])
+                              
+                            );
+                          });
+                    }
+                    //this will load first
+                    return CircularProgressIndicator();
+        }),
           ],
         )));
   }

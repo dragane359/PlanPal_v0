@@ -2,6 +2,7 @@ import 'package:flutterfire_samples/res/custom_colors.dart';
 import 'package:flutter/material.dart';
 //import 'package:registration/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutterfire_samples/screens/payments_screen.dart';
 import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
@@ -92,11 +93,11 @@ class _PayMeScreenState extends State<PayMeScreen> {
           ),
           onPressed: () {
             Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => MyGroups(user: _user),
-              ),
-            );
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PaymentsScreen(user: _user),
+                ),
+              );
           },
         ));
     final DeclarePaymentButton = Padding(
@@ -163,7 +164,7 @@ class _PayMeScreenState extends State<PayMeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MyGroups(user: _user),
+                  builder: (context) => PaymentsScreen(user: _user),
                 ),
               );
             },

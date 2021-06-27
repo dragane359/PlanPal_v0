@@ -7,6 +7,7 @@ import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterfire_samples/screens/my_groups.dart';
+import 'package:flutterfire_samples/screens/payments_screen.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 var y;
@@ -92,11 +93,11 @@ class _PayScreenState extends State<PayScreen> {
           ),
           onPressed: () {
             Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => MyGroups(user: _user),
-              ),
-            );
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PaymentsScreen(user: _user),
+                ),
+              );
           },
         ));
     final DeclarePaymentButton = Padding(
@@ -163,7 +164,7 @@ class _PayScreenState extends State<PayScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MyGroups(user: _user),
+                  builder: (context) => PaymentsScreen(user: _user),
                 ),
               );
             },
