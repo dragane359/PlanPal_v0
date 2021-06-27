@@ -14,7 +14,7 @@ Adulting is no easy task. Oftentimes, meeting up with friends and loved ones is 
 
 Personally, having tried to organise group sessions with friends, I find to be extremely cumbersome and often impossible to keep track of everyone's schedules and come up with slots that people are free at. Messaging multiple people individually and keeping track of their free slots on telegram becomes rather annoying to all parties involved. Additionally, it is easy to forget what payments I need to make and who I'm yet to receive from. This problem served as motivation for me to work on this project. 
 
-Aim
+<b>Aim</b>
 
 We hope to be able to provide users with a platform for them to identify common timings to make events happen. Here, they will be able to join different groups to schedule and plan meetups. Additional features are tailor-made to ensure that the entirety of the meeting up is hassle-free. Examples include payment trackers and notifation senders when requesting payment.  
 
