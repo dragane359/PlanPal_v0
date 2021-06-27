@@ -512,7 +512,6 @@ Timeline and Schedule
 </tbody>
 </table>
 Project Log
-<p><br /></p>
 <table>
 <tbody>
 <tr>
@@ -528,18 +527,18 @@ Project Log
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">74</span></p>
+<p><span style="font-weight: 400;">168</span></p>
 </td>
 <td>
-<p><span style="font-weight: 400;">37</span></p>
+<p><span style="font-weight: 400;">84</span></p>
 </td>
 <td>
-<p><span style="font-weight: 400;">37</span></p>
+<p><span style="font-weight: 400;">84</span></p>
 </td>
 </tr>
 </tbody>
 </table>
-<p><br /></p>
+<p><br /><br /></p>
 <table>
 <tbody>
 <tr>
@@ -771,6 +770,306 @@ Project Log
 </td>
 <td>
 <p><span style="font-weight: 400;">Finishing up Milestone 1</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">11</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Peer Evaluations</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">02/06/21</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Reading and doing peer evaluations</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">12</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Team meeting</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">03/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Research further into database systems (Log In and Sign up)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">13</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">04/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Learning how to use flutter for extra features (Navigation Drawer)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">14</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">06/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Coding + Debugging</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">15</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Research</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">08/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Research on transition of different screens</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">16</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">10/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Coding of different screens (Group screen)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">17</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">13/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Debugging of screens (Group Feature screen)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">18</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Team meeting</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">15/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Discussion and researching of feasibility of features</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">19</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">17/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Coding of Events Screen</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">20</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">19/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Debugging Events screen, linking it to database</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">21</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Team meeting</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">22/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Testing the features + planning next steps for features</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">22</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individuals Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">24/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Researching on flutter calendar imports</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">23</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Team meeting</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">25/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Reviewing README and cleaning up code</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">24</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Group Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">26/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Updating of git&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">25</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Group Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">28/06</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Finalizing of READme and code for Milestone 2</span></p>
 </td>
 </tr>
 </tbody>
