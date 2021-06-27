@@ -241,10 +241,9 @@ We hope to be able to provide users with a platform for them to identify common 
 <b>Technologies Used</b>
 
 Flutter
-
 Firebase
 
-Our Features
+<b>Our Features</b>
 
 <table>
 <tbody>
