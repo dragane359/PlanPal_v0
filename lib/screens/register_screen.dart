@@ -44,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       _errorMessage = "error";
     });
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,14 +214,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   email: emailTextEditController.text,
                                   password: passwordTextEditController.text)
                               .then((x) => {
-                                _firestore
-                        .collection("users")
-                        .doc(x.user!.uid)
-                        .set({'email': emailTextEditController.text}),
+                                    _firestore
+                                        .collection("users")
+                                        .doc(x.user!.uid)
+                                        .set({
+                                      'email': emailTextEditController.text
+                                    }),
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              HomeScreen(user:x.user)),
+                                              HomeScreen(user: x.user)),
+                                    ),
+                                    _firestore
+                                        .collection("payments")
+                                        .doc(emailTextEditController.text)
+                                        .set({'test':"test"}),
+                                    Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              HomeScreen(user: x.user)),
                                     ),
                                   });
                         }
