@@ -2,11 +2,11 @@
 
 ![Techtopia-2](https://user-images.githubusercontent.com/84222148/120170351-73643600-c233-11eb-9a02-6739cec98614.png)
 
-PlanPal
+<b>PlanPal</b>
 
 The one-stop application to ease your scheduling worries!
 
-Motivation
+<b>Motivation</b>
 
 Amidst the hustle and bustle of your busy schedule, you thought about meeting your old friends after a while. Thinking that your friends will be busy, you decided to delay a meetup with them to a later date. You finally decided to contact them, but to your dismay, another year has passed, you find out that your friends are even busier with their schedules. A reunion seems to be impossible to organise. 
 
@@ -18,7 +18,7 @@ Personally, having tried to organise group sessions with friends, I find to be e
 
 We hope to be able to provide users with a platform for them to identify common timings to make events happen. Here, they will be able to join different groups to schedule and plan meetups. Additional features are tailor-made to ensure that the entirety of the meeting up is hassle-free. Examples include payment trackers and notifation senders when requesting payment.  
 
-User Stories
+<b>User Stories</b>
 <table>
 <tbody>
 <tr>
@@ -238,7 +238,7 @@ User Stories
 <p>&nbsp;</p>
 
 
-Technologies Used
+<b>Technologies Used</b>
 
 Flutter
 
