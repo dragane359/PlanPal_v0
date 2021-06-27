@@ -13,6 +13,9 @@ import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
 import 'package:flutterfire_samples/screens/join_group_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutterfire_samples/screens/home_screen.dart';
+
+
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -131,6 +134,24 @@ _firestore.collection("users").doc(_user.uid).
                     //this will load first
                     return CircularProgressIndicator();
         }),
+        Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'Return to HomeScreen',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => HomeScreen(user: _user)),
+                    );
+                  },
+                )),
           ])));
   }
 }

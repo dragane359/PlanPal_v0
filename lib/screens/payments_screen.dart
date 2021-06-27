@@ -11,6 +11,9 @@ import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutterfire_samples/screens/home_screen.dart';
+import 'package:flutterfire_samples/screens/alr_paid_screen.dart';
+import 'package:flutterfire_samples/screens/alr_paid_me_screen.dart';
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 
@@ -46,11 +49,25 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
-                'Welcome to your payments Page! Click on the options to declare a transaction',
+                'Welcome to your payments Page! Your UserID is ${_user.uid}',
                 style: TextStyle(fontSize: 36.0, color: Colors.white),
                 textAlign: TextAlign.center,
               ),
             ),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'Payment not made yet!',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                  },
+                )),
             Padding(
                 padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
                 child: RaisedButton(
@@ -87,6 +104,56 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                     );
                   },
                 )),
+                Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'Payments have already been made!',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                  },
+                )),
+                Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'I have paid someone!',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => AlrPaidScreen(user: _user)),
+                    );
+                  },
+                )),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'Someone has paid me!',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => AlrPaidMeScreen(user: _user)),
+                    );
+                  },
+                )),
             StreamBuilder<QuerySnapshot>(
         stream: _firestore
              .collection('payments')
@@ -116,6 +183,24 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                     //this will load first
                     return CircularProgressIndicator();
         }),
+        Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'Return to HomeScreen',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => HomeScreen(user: _user)),
+                    );
+                  },
+                )),
           ],
         )));
   }
