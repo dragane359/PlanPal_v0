@@ -90,6 +90,156 @@ User Stories
 </tbody>
 </table>
 
+
+<p><span style="font-weight: 400;">Testing</span></p>
+<p>&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Test ID</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Testing Objective</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Steps Taken</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Expected Results</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Pass/Fail</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">1</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Test that the guests are able to register as users</span></p>
+</td>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Navigate to registration page</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Key in name, password and email</span></li>
+</ol>
+</td>
+<td>
+<p><span style="font-weight: 400;">Guest is able to register as user and key in&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Pass</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Test that the guests are able to log into the site</span></p>
+</td>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Navigate to the registration page</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Key in their email and password</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Verify successful login&nbsp;</span></li>
+</ol>
+</td>
+<td>
+<p><span style="font-weight: 400;">Users are able to log in</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Pass</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">3.</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Test that guests are able to change password</span></p>
+</td>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Navigate to the profile page</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Change password</span></li>
+</ol>
+</td>
+<td>
+<p><span style="font-weight: 400;">Users are able to change password successfully</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Pass</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">4.</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Test that guests are able to access group page</span></p>
+</td>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Navigate into the group page</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Create a group</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Send invitation</span></li>
+</ol>
+</td>
+<td>
+<p><span style="font-weight: 400;">Users are able to create group and invite</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Pass</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">5.</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Test that guests are able to join new group</span></p>
+</td>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Navigate into the group page</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Join group via invite code</span></li>
+</ol>
+</td>
+<td>
+<p><span style="font-weight: 400;">Users are able to join group</span><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Pass</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">6.</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Test that guests are able to create new events&nbsp;</span></p>
+</td>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Events page within group</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Create an event</span></li>
+</ol>
+</td>
+<td>
+<p><span style="font-weight: 400;">Users are able to create an event</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Fail</span></p>
+<p><span style="font-weight: 400;">(Events occasionally doesn&rsquo;t show up)</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+
+
 Technologies Used
 
 Flutter
