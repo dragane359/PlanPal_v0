@@ -91,7 +91,6 @@ User Stories
 </table>
 
 <p><span style="font-weight: 400;">Testing</span></p>
-<p>&nbsp;</p>
 <table>
 <tbody>
 <tr>
