@@ -4,6 +4,7 @@ import 'package:flutterfire_samples/res/custom_colors.dart';
 
 //import 'package:registration/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutterfire_samples/screens/chat_screen.dart';
 import 'package:flutterfire_samples/screens/my_groups.dart';
 import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
@@ -48,7 +49,28 @@ class _IndivGroupScreenState extends State<IndivGroupScreen> {
                 textAlign: TextAlign.center,
               ),
             ),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'Chat',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ChatScreen(user: _user,group: _group),
+                ),
+              );
+                  },
+                )),
           ],
-        )));
+        )
+        ));
   }
 }

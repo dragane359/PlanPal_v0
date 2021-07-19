@@ -28,6 +28,7 @@ dependencies:
   intl:
   numberpicker:
   firebase_messaging:
+  random_words:
 
 
   # The following adds the Cupertino Icons font to your application.
