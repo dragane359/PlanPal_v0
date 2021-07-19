@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
@@ -48,7 +50,8 @@ class _ChatScreenState extends State<ChatScreen> {
     topicController.addListener(onChange);
     return Scaffold(
         backgroundColor: CustomColors.purplee,
-        body: Center(
+        body: Align(
+          alignment: Alignment.topCenter,
             child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(top: 16.0, left: 24.0, right: 24.0),
@@ -66,7 +69,9 @@ class _ChatScreenState extends State<ChatScreen> {
                 builder: (BuildContext context,
                     AsyncSnapshot<DocumentSnapshot> snapshot) {
                   if (snapshot.hasData) {
-                    return Text(snapshot.data!['finaltopic']);
+                    return Center(child: Text(snapshot.data!['finaltopic'],
+                    style: TextStyle(color: Colors.red,
+                    fontSize: 50 )));
                   }
                   //this will load first
                   return CircularProgressIndicator();
@@ -94,7 +99,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     borderRadius: BorderRadius.circular(24),
                   ),
                   child: Text(
-                    'Refresh Chat Topic!',
+                    'Change topic!',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
