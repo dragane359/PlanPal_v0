@@ -5,6 +5,7 @@ import 'package:flutterfire_samples/screens/user_info_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 //import '/Users/ganeshpremakumar/Downloads/flutterfire-samples-google-sign-in/android/app/google-services.json';
+import 'package:flutterfire_samples/screens/home_screen.dart';
 
 class AuthenticationHelper {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -62,7 +63,7 @@ class Authentication {
     if (user != null) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => UserInfoScreen(
+          builder: (context) => HomeScreen(
             user: user,
           ),
         ),

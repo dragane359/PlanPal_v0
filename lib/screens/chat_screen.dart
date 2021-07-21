@@ -30,6 +30,8 @@ class _ChatScreenState extends State<ChatScreen> {
   var _group;
   String _errorMessage = '';
   final TextEditingController topicController = new TextEditingController();
+  final TextEditingController messageController = new TextEditingController();
+
   void onChange() {
     setState(() {
       _errorMessage = '';
@@ -44,6 +46,8 @@ class _ChatScreenState extends State<ChatScreen> {
     super.initState();
   }
 
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     final node = FocusScope.of(context);
@@ -51,65 +55,141 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
         backgroundColor: CustomColors.purplee,
         body: Align(
-          alignment: Alignment.topCenter,
+            alignment: Alignment.topCenter,
             child: ListView(
-          shrinkWrap: true,
-          padding: EdgeInsets.only(top: 16.0, left: 24.0, right: 24.0),
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                'Current Chat Topic is:',
-                style: TextStyle(fontSize: 36.0, color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            StreamBuilder<DocumentSnapshot>(
-                stream: _firestore.collection('groups').doc(_group.toString()).snapshots(),
-                builder: (BuildContext context,
-                    AsyncSnapshot<DocumentSnapshot> snapshot) {
-                  if (snapshot.hasData) {
-                    return Center(child: Text(snapshot.data!['finaltopic'],
-                    style: TextStyle(color: Colors.red,
-                    fontSize: 50 )));
-                  }
-                  //this will load first
-                  return CircularProgressIndicator();
-                }),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-                child: TextFormField(
-                  keyboardType: TextInputType.name,
-                  autofocus: false,
-                  controller: topicController,
-                  decoration: InputDecoration(
-                    hintText: 'Type in a new topic!',
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(32.0)),
-                  ),
-                  textInputAction: TextInputAction.next,
-                  onEditingComplete: () => node.nextFocus(),
-                )),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-                child: RaisedButton(
-                  color: Colors.pink,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                  ),
+              shrinkWrap: true,
+              padding: EdgeInsets.only(top: 16.0, left: 24.0, right: 24.0),
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
-                    'Change topic!',
-                    style: TextStyle(color: Colors.white),
+                    'Current Chat Topic is:',
+                    style: TextStyle(fontSize: 36.0, color: Colors.white),
+                    textAlign: TextAlign.center,
                   ),
-                  onPressed: () {
-                    _firestore
-                        .collection("groups")
+                ),
+                StreamBuilder<DocumentSnapshot>(
+                    stream: _firestore
+                        .collection('groups')
                         .doc(_group.toString())
-                        .update({'finaltopic': topicController.text});
-                  },
-                )),
-          ],
-        )));
+
+                        .snapshots(),
+                    builder: (BuildContext context,
+                        AsyncSnapshot<DocumentSnapshot> snapshot) {
+                      if (snapshot.hasData) {
+                        return Center(
+                            child: Text(snapshot.data!['finaltopic'],
+                                style: TextStyle(
+                                    color: Colors.red, fontSize: 50)));
+                      }
+                      //this will load first
+                      return CircularProgressIndicator();
+                    }),
+                Padding(
+                    padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.name,
+                      autofocus: false,
+                      controller: topicController,
+                      decoration: InputDecoration(
+                        hintText: 'Type in a new topic!',
+                        contentPadding:
+                            EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(32.0)),
+                      ),
+                      textInputAction: TextInputAction.next,
+                      onEditingComplete: () => node.nextFocus(),
+                    )),
+                Padding(
+                    padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                    child: RaisedButton(
+                      color: Colors.pink,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                      child: Text(
+                        'Change topic!',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        _firestore
+                            .collection("groups")
+                            .doc(_group.toString())
+                            .update({'finaltopic': topicController.text});
+                      },
+                    )),
+                    
+                    StreamBuilder<QuerySnapshot>(
+        stream: _firestore
+             .collection('groups')
+             .doc(_group.toString())
+             .collection('messages')
+             .orderBy('timestamp',descending: false)
+             .snapshots(),
+        builder: (BuildContext context,
+              AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (snapshot.hasData) {
+                        return ListView.builder( 
+                          scrollDirection: Axis.vertical,
+                          
+                          shrinkWrap: true,
+                          itemCount: snapshot.data!.docs.length,
+                          itemBuilder: (context,index){
+                            return ListTile(
+                              onTap: () {},    
+                              title: Center(child: Text(snapshot.data!.docs[index]['text'])),
+                              subtitle: Column(
+                                children: <Widget>[
+                                Text(snapshot.data!.docs[index]['email'].toString()),
+                              Text(snapshot.data!.docs[index]['timestamp'].toDate().toString())]
+                              
+                            ));
+                          });
+                    }
+                    //this will load first
+                    return CircularProgressIndicator();
+        }),
+                Padding(
+                    padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.name,
+                      autofocus: false,
+                      controller: messageController,
+                      decoration: InputDecoration(
+                        hintText: 'Type Your Message!',
+                        contentPadding:
+                            EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(32.0)),
+                      ),
+                      textInputAction: TextInputAction.next,
+                      onEditingComplete: () => node.nextFocus(),
+                    )),
+                Padding(
+                    padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                    child: RaisedButton(
+                      color: Colors.pink,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                      child: Text(
+                        'Send Message!',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        _firestore
+                            .collection('groups')
+                            .doc(_group.toString())
+                            .collection('messages')
+                            .add({
+                              'email':_user.email,
+                              'timestamp':Timestamp.now().toDate(),
+                              'text':messageController.text
+                            });
+                      },
+                    )),
+              ],
+            )));
   }
 }
