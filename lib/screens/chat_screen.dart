@@ -13,6 +13,7 @@ import 'package:flutterfire_samples/widgets/app_bar_title.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+ScrollController _scrollController = new ScrollController();
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key, required user, group})
@@ -72,7 +73,6 @@ class _ChatScreenState extends State<ChatScreen> {
                     stream: _firestore
                         .collection('groups')
                         .doc(_group.toString())
-
                         .snapshots(),
                     builder: (BuildContext context,
                         AsyncSnapshot<DocumentSnapshot> snapshot) {
@@ -119,37 +119,51 @@ class _ChatScreenState extends State<ChatScreen> {
                             .update({'finaltopic': topicController.text});
                       },
                     )),
-                    
-                    StreamBuilder<QuerySnapshot>(
-        stream: _firestore
-             .collection('groups')
-             .doc(_group.toString())
-             .collection('messages')
-             .orderBy('timestamp',descending: false)
-             .snapshots(),
-        builder: (BuildContext context,
-              AsyncSnapshot<QuerySnapshot> snapshot) {
-                    if (snapshot.hasData) {
-                        return ListView.builder( 
-                          scrollDirection: Axis.vertical,
-                          
-                          shrinkWrap: true,
-                          itemCount: snapshot.data!.docs.length,
-                          itemBuilder: (context,index){
-                            return ListTile(
-                              onTap: () {},    
-                              title: Center(child: Text(snapshot.data!.docs[index]['text'])),
-                              subtitle: Column(
-                                children: <Widget>[
-                                Text(snapshot.data!.docs[index]['email'].toString()),
-                              Text(snapshot.data!.docs[index]['timestamp'].toDate().toString())]
-                              
-                            ));
-                          });
-                    }
-                    //this will load first
-                    return CircularProgressIndicator();
-        }),
+                Container(
+                  height: 300,
+                  child: StreamBuilder<QuerySnapshot>(
+                      stream: _firestore
+                          .collection('groups')
+                          .doc(_group.toString())
+                          .collection('messages')
+                          .orderBy('timestamp', descending: true)
+                          .snapshots(),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<QuerySnapshot> snapshot) {
+                        if (snapshot.hasData) {
+                          return ListView.builder(
+                              scrollDirection: Axis.vertical,
+                              controller: _scrollController,
+                              reverse: true,
+                              shrinkWrap: true,
+                              itemCount: snapshot.data!.docs.length,
+                              itemBuilder: (context, index) {
+                                return ListTile(
+                                    onTap: () {},
+                                    title: Align(
+                                        alignment: Alignment.bottomCenter,
+                                        child: Text(snapshot.data!.docs[index]
+                                            ['text'])),
+                                    trailing: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: <Widget>[
+                                          Text(snapshot
+                                              .data!.docs[index]['email']
+                                              .toString()),
+                                          Text(snapshot
+                                              .data!.docs[index]['timestamp']
+                                              .toDate()
+                                              .toString()
+                                              .substring(0, 16))
+                                        ]));
+                              });
+                        }
+                        //this will load first
+                        return CircularProgressIndicator();
+                      }),
+                ),
                 Padding(
                     padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
                     child: TextFormField(
@@ -183,10 +197,11 @@ class _ChatScreenState extends State<ChatScreen> {
                             .doc(_group.toString())
                             .collection('messages')
                             .add({
-                              'email':_user.email,
-                              'timestamp':Timestamp.now().toDate(),
-                              'text':messageController.text
-                            });
+                          'email': _user.email,
+                          'timestamp': Timestamp.now().toDate(),
+                          'text': messageController.text
+                        });
+                        messageController.clear();
                       },
                     )),
               ],
