@@ -28,6 +28,7 @@ dependencies:
   intl:
   numberpicker:
   firebase_messaging:
+  syncfusion_flutter_calendar: ^19.1.59
 
 
   # The following adds the Cupertino Icons font to your application.

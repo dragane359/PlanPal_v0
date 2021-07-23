@@ -1,14 +1,20 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:registration/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutterfire_samples/screens/calendar_screen.dart';
 import 'package:flutterfire_samples/screens/chat_screen.dart';
 import 'package:flutterfire_samples/screens/my_groups.dart';
 import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
+
+final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 class IndivGroupScreen extends StatefulWidget {
   const IndivGroupScreen({Key? key, required user, group})
@@ -32,12 +38,13 @@ class _IndivGroupScreenState extends State<IndivGroupScreen> {
     super.initState();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: CustomColors.purplee,
         body: Center(
-            child: ListView(
+            child: ListView( 
           shrinkWrap: true,
           padding: EdgeInsets.only(top: 16.0, left: 24.0, right: 24.0),
           children: <Widget>[
@@ -65,6 +72,26 @@ class _IndivGroupScreenState extends State<IndivGroupScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => ChatScreen(user: _user,group: _group),
+                ),
+              );
+                  },
+                )),
+                Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'Calendar',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoadDataFromFireStore(user: _user,group: _group),
                 ),
               );
                   },
