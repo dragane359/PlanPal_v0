@@ -3,7 +3,6 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
-import 'package:random_words/random_words.dart';
 //import 'package:registration/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutterfire_samples/screens/my_groups.dart';
