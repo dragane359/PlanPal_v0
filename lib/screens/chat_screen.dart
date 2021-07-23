@@ -116,6 +116,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             .collection("groups")
                             .doc(_group.toString())
                             .update({'finaltopic': topicController.text});
+                        topicController.clear();             
                       },
                     )),
                 Container(
