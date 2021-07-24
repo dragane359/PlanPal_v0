@@ -63,7 +63,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
       autofocus: false,
       controller: friendemailController,
       decoration: InputDecoration(
-        hintText: 'UserID of Person',
+        hintText: 'Email Address of Person',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -111,7 +111,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
               //     _firestore.collection("users").doc(_user.uid).get().then((value) => value.data()!['email'].toString());
               var docRef = _firestore
                   .collection("payments")
-                  .doc(_user.uid)
+                  .doc(_user.email)
                   .collection('friends')
                   .doc(friendemailController.text);
               docRef.get().then((doc) => {
@@ -120,7 +120,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                         print(int.parse(amounttopayController.text)),
                         _firestore
                           .collection("payments")
-                          .doc(_user.uid)
+                          .doc(_user.email)
                           .collection('friends')
                           .doc(friendemailController.text)
                             .update(({
@@ -130,7 +130,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                           .collection("payments")
                           .doc(friendemailController.text)
                           .collection('friends')
-                          .doc(_user.uid)
+                          .doc(_user.email)
                             .update(({
                               'I owe': FieldValue.increment(-int.parse(amounttopayController.text)) 
                             })),
@@ -140,7 +140,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                         print(_user.uid),
                         _firestore
                           .collection("payments")
-                          .doc(_user.uid)
+                          .doc(_user.email)
                           .collection('friends')
                           .doc(friendemailController.text)
                             .set(({
@@ -153,7 +153,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                           .collection("payments")
                           .doc(friendemailController.text)
                           .collection('friends')
-                          .doc(_user.uid)
+                          .doc(_user.email)
                             .set(({
                               'I owe': -int.parse(amounttopayController.text)
                             ,
