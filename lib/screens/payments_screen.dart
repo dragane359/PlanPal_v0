@@ -49,7 +49,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
-                'Welcome to your payments Page! Your UserID is ${_user.uid}',
+                'Welcome to your payments Page!',
                 style: TextStyle(fontSize: 36.0, color: Colors.white),
                 textAlign: TextAlign.center,
               ),
@@ -157,7 +157,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
             StreamBuilder<QuerySnapshot>(
         stream: _firestore
              .collection('payments')
-             .doc(_user.uid)
+             .doc(_user.email)
              .collection('friends')
              .snapshots(),
         builder: (BuildContext context,
