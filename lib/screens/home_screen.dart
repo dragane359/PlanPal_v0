@@ -47,21 +47,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 textAlign: TextAlign.center,
               ),
             ),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-                child: RaisedButton(
-                  color: Colors.pink,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                  child: Text(
-                    'My Profile',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                )),
+            // Padding(
+            //     padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+            //     child: RaisedButton(
+            //       color: Colors.pink,
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(24),
+            //       ),
+            //       child: Text(
+            //         'My Profile',
+            //         style: TextStyle(color: Colors.white),
+            //       ),
+            //       onPressed: () {
+            //         Navigator.pop(context);
+            //       },
+            //     )),
             Padding(
                 padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                 child: RaisedButton(
