@@ -8,7 +8,6 @@ import 'package:flutterfire_samples/utils/authentication.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 var y;
 
@@ -79,8 +78,8 @@ class _CreateGroupState extends State<CreateGroup> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => MyGroups(user: _user),
-                  ),
+                builder: (context) => MyGroups(user: _user),
+              ),
             );
           },
         ));
@@ -90,22 +89,62 @@ class _CreateGroupState extends State<CreateGroup> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
-            onPressed: () {
-              _firestore.collection("groups").doc(grpnameController.text).set({
-                'members': [
-                  _user.uid,
-                ],
-                'finaltopic': 'Create a Topic!'
-              });
-              _firestore.collection("users").doc(_user.uid).update({
-                'mygroups':FieldValue.arrayUnion([grpnameController.text,])
-            });
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => MyGroups(user: _user),
+            onPressed: () async {
+              var file =
+                  _firestore.collection("groups").doc(grpnameController.text);
+              var files = await file.get();
+              if (files.exists) {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                                return AlertDialog(
+                      content: Stack(
+                        overflow: Overflow.visible,
+                        children: <Widget>[
+                          Positioned(
+                            right: -40.0,
+                            top: -40.0,
+                            child: InkResponse(
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: CircleAvatar(
+                                child: Icon(Icons.close),
+                                backgroundColor: Colors.red,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('Group name taken! Choose Another name!'),
+                                ),
+                                ]));
+                        }
+
+                              
+                              );
+              } else {
+                _firestore
+                    .collection("groups")
+                    .doc(grpnameController.text)
+                    .set({
+                  'members': [
+                    _user.uid,
+                  ],
+                  'finaltopic': 'Create a Topic!'
+                });
+                _firestore.collection("users").doc(_user.uid).update({
+                  'mygroups': FieldValue.arrayUnion([
+                    grpnameController.text,
+                  ])
+                });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyGroups(user: _user),
                   ),
-            );
+                );
+              }
             },
             padding: EdgeInsets.all(12),
             color: Colors.pink,
