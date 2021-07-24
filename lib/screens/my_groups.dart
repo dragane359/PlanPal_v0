@@ -15,8 +15,6 @@ import 'package:flutterfire_samples/screens/join_group_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterfire_samples/screens/home_screen.dart';
 
-
-
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 class MyGroups extends StatefulWidget {
@@ -34,8 +32,7 @@ class _MyGroupsState extends State<MyGroups> {
   List getgrp() {
     _user = widget._user;
     var getarr = [];
-_firestore.collection("users").doc(_user.uid).
-    get().then((doc) => {
+    _firestore.collection("users").doc(_user.uid).get().then((doc) => {
           if (doc.exists)
             {getarr.addAll(doc.get("mygroups"))}
           else
@@ -58,121 +55,117 @@ _firestore.collection("users").doc(_user.uid).
         backgroundColor: CustomColors.purplee,
         body: Center(
             child: ListView(
-          shrinkWrap: true,
-          padding: EdgeInsets.only(top: 16.0, left: 24.0, right: 24.0),
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                'Here are your groups!',
-                style: TextStyle(fontSize: 36.0, color: Colors.white),
-                textAlign: TextAlign.center,
+                shrinkWrap: true,
+                padding: EdgeInsets.only(top: 16.0, left: 24.0, right: 24.0),
+                children: <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
+                child: Text(
+                  'Here are your groups!',
+                  style: TextStyle(fontSize: 36.0, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-                child: RaisedButton(
-                  color: Colors.pink,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                  child: Text(
-                    'Create A Group',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                          builder: (context) => CreateGroup(user: _user)),
-                    );
-                  },
-                )),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                child: RaisedButton(
-                  color: Colors.pink,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                  child: Text(
-                    'Join A Group',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                          builder: (context) => JoinGroup(user: _user)),
-                    );
-                  },
-                )),
-                 StreamBuilder<DocumentSnapshot>(
-        stream: _firestore
-             .collection('users')
-             .doc(_user.uid)
-             .snapshots(),
-        builder: (BuildContext context,
-              AsyncSnapshot<DocumentSnapshot> snapshot) {
+              Padding(
+                  padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                  child: RaisedButton(
+                    color: Colors.pink,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    child: Text(
+                      'Create A Group',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (context) => CreateGroup(user: _user)),
+                      );
+                    },
+                  )),
+              Padding(
+                  padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                  child: RaisedButton(
+                    color: Colors.pink,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    child: Text(
+                      'Join A Group',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (context) => JoinGroup(user: _user)),
+                      );
+                    },
+                  )),
+              StreamBuilder<DocumentSnapshot>(
+                  stream:
+                      _firestore.collection('users').doc(_user.uid).snapshots(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<DocumentSnapshot> snapshot) {
                     if (snapshot.hasData) {
-                        return ListView.builder(
+                      return ListView.builder(
                           scrollDirection: Axis.vertical,
                           shrinkWrap: true,
                           itemCount: snapshot.data!['mygroups'].length,
-                          itemBuilder: (context,index){
+                          itemBuilder: (context, index) {
                             return ListTile(
                               onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => IndivGroupScreen(user: _user,group:snapshot.data!['mygroups'][index]),
-                  ),
-            );
-          },
-                              title: Center(child: Text(snapshot.data!['mygroups'][index])),
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => IndivGroupScreen(
+                                        user: _user,
+                                        group: snapshot.data!['mygroups']
+                                            [index]),
+                                  ),
+                                );
+                              },
+                              title: Center(
+                                  child:
+                                      Text(snapshot.data!['mygroups'][index])),
                             );
                           });
+                    } else {
+                      //this will load first
+                      return CircularProgressIndicator();
                     }
-                    //this will load first
-                    return CircularProgressIndicator();
-        }),
-        Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-                child: RaisedButton(
-                  color: Colors.pink,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                  child: Text(
-                    'Return to HomeScreen',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                          builder: (context) => HomeScreen(user: _user)),
-                    );
-                  },
-                )),
-          ])));
+                  }),
+              Padding(
+                  padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                  child: RaisedButton(
+                    color: Colors.pink,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    child: Text(
+                      'Return to HomeScreen',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (context) => HomeScreen(user: _user)),
+                      );
+                    },
+                  )),
+            ])));
   }
 }
-  Widget _buildList(DocumentSnapshot snapshot) {
 
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        final doc = snapshot[index]; 
+Widget _buildList(DocumentSnapshot snapshot) {
+  return ListView.builder(itemBuilder: (context, index) {
+    final doc = snapshot[index];
 
-        return Dismissible(
-          key: Key(doc.id),
-          background: Container(color: Colors.red),
-          onDismissed: (direction) {
-          },
-          child: ListTile(
-            title: Text(doc)
-          ),
-        );
-
-       
-      }
+    return Dismissible(
+      key: Key(doc.id),
+      background: Container(color: Colors.red),
+      onDismissed: (direction) {},
+      child: ListTile(title: Text(doc)),
     );
-
-  }
+  });
+}
