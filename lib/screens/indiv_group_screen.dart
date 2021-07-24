@@ -96,6 +96,24 @@ class _IndivGroupScreenState extends State<IndivGroupScreen> {
               );
                   },
                 )),
+                Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'Return to My Groups!',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => MyGroups(user: _user)),
+                    );
+                  },
+                )),
           ],
         )
         ));

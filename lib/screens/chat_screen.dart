@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
 //import 'package:registration/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutterfire_samples/screens/indiv_group_screen.dart';
 import 'package:flutterfire_samples/screens/my_groups.dart';
 import 'package:flutterfire_samples/screens/sign_in_screen.dart';
 import 'package:flutterfire_samples/utils/authentication.dart';
@@ -204,6 +205,24 @@ class _ChatScreenState extends State<ChatScreen> {
                         messageController.clear();
                       },
                     )),
+                    Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                child: RaisedButton(
+                  color: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Text(
+                    'Return to Group Page!',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => IndivGroupScreen(user: _user,group: _group,)),
+                    );
+                  },
+                )),
               ],
             )));
   }
