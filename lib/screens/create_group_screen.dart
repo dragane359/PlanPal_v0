@@ -95,7 +95,7 @@ class _CreateGroupState extends State<CreateGroup> {
                 'members': [
                   _user.uid,
                 ],
-                'finaltopic': 'none'
+                'finaltopic': 'Create a Topic!'
               });
               _firestore.collection("users").doc(_user.uid).update({
                 'mygroups':FieldValue.arrayUnion([grpnameController.text,])
