@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "88353818935",
+    "firebase_url": "https://plswork-a6f1e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "plswork-a6f1e",
+    "storage_bucket": "plswork-a6f1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88353818935:android:7009656fa8c5350035f2b2",
+        "android_client_info": {
+          "package_name": "com.ganeshpremakumar.plswork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88353818935-suchd8c705h5v1lukn2hr31k6prhmmqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGJmYQi6tq1LOFd1SZl7OYkfUeF7bijxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88353818935-suchd8c705h5v1lukn2hr31k6prhmmqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
