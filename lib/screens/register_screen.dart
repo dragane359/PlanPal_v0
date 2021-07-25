@@ -218,7 +218,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         .collection("users")
                                         .doc(x.user!.uid)
                                         .set({
-                                      'email': emailTextEditController.text
+                                      'email': emailTextEditController.text,'mygroups':[]
                                     }),
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
@@ -228,11 +228,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     _firestore
                                         .collection("payments")
                                         .doc(emailTextEditController.text)
-                                        .set({'test':"test"}),
-                                    _firestore
-                                        .collection("users")
-                                        .doc(x.user!.uid)
-                                        .set({'mygroups':[]}),
+                                        .set({'test':"test"}),                            
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (context) =>
