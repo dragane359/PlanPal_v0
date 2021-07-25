@@ -116,7 +116,7 @@ class _JoinGroupState extends State<JoinGroup> {
                         ),
                         Padding(
                           padding: EdgeInsets.all(8.0),
-                          child: Text('Group name taken! Choose Another name!'),
+                          child: Text('Group does not exist'),
                         ),
                       ]));
                     });

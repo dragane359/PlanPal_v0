@@ -1,7 +1,7 @@
 {
     "name": "flutterfire_samples",
     "short_name": "flutterfire_samples",
-    "start_url": ".",
+    "start_url": "./",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
@@ -11,12 +11,12 @@
     "icons": [
         {
             "src": "icons/Icon-192.png",
-            "sizes": "192x192",
+            "sizes": "144x144",
             "type": "image/png"
         },
         {
             "src": "icons/Icon-512.png",
-            "sizes": "512x512",
+            "sizes": "144x144",
             "type": "image/png"
         }
     ]

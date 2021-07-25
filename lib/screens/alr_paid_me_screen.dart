@@ -59,7 +59,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
     );
 
     final email = TextFormField(
-      keyboardType: TextInputType.name,
+      keyboardType: const TextInputType.numberWithOptions(decimal: false),
       autofocus: false,
       controller: friendemailController,
       decoration: InputDecoration(
@@ -70,7 +70,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
       textInputAction: TextInputAction.next,
       onEditingComplete: () => node.nextFocus(),
     );
-
+// const TextInputType.numberWithOptions(decimal: true);
     final amount = TextFormField(
       keyboardType: TextInputType.number,
       autofocus: false,
@@ -124,7 +124,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                           .collection('friends')
                           .doc(friendemailController.text)
                             .update(({
-                              'They owe me': FieldValue.increment(-int.parse(amounttopayController.text)) 
+                              'They owe me': FieldValue.increment(num.parse(amounttopayController.text)) 
                             })),
                         _firestore
                           .collection("payments")
@@ -132,7 +132,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                           .collection('friends')
                           .doc(_user.email)
                             .update(({
-                              'I owe': FieldValue.increment(-int.parse(amounttopayController.text)) 
+                              'I owe': FieldValue.increment(-num.parse(amounttopayController.text)) 
                             })),
                       }
                     else
@@ -146,7 +146,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                             .set(({
                               'I owe': 0
                             ,
-                              'They owe me': -int.parse(amounttopayController.text)
+                              'They owe me': -num.parse(amounttopayController.text)
                             })),
                         print('here'),
                         _firestore
@@ -155,7 +155,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                           .collection('friends')
                           .doc(_user.email)
                             .set(({
-                              'I owe': -int.parse(amounttopayController.text)
+                              'I owe': -num.parse(amounttopayController.text)
                             ,
                               'They owe me': 0
                             })),
