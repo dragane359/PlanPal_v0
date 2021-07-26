@@ -124,7 +124,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                           .collection('friends')
                           .doc(friendemailController.text)
                             .update(({
-                              'They owe me': FieldValue.increment(num.parse(amounttopayController.text)) 
+                              'They owe me': FieldValue.increment(-num.parse(amounttopayController.text)) 
                             })),
                         _firestore
                           .collection("payments")
@@ -132,7 +132,7 @@ class _AlrPaidMeScreenState extends State<AlrPaidMeScreen> {
                           .collection('friends')
                           .doc(_user.email)
                             .update(({
-                              'I owe': FieldValue.increment(-num.parse(amounttopayController.text)) 
+                              'I owe': FieldValue.increment(num.parse(amounttopayController.text)) 
                             })),
                       }
                     else
