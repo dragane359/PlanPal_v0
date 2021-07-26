@@ -1,18 +1,31 @@
 # PlanPal - Meetings Made Easy! 
 
-![Techtopia-3](https://user-images.githubusercontent.com/84222148/123623739-63df0980-d840-11eb-8f46-21983041bbac.png)
+![Techtopia-4](https://user-images.githubusercontent.com/84222148/127013906-8f4118d2-871d-46fb-8a95-f4a40df6ff01.png)
 
 <b>PlanPal</b>
 
 The one-stop application to ease your scheduling worries!
 
+User Guide
+https://docs.google.com/document/d/1otOEyy-XAJUIanCvJ4ahWh87KA77Hd05IrBGhXH-qGw/edit?usp=sharing
+
+Project Video
+https://drive.google.com/file/d/1zPZikpR8d0sc-UZGkh1jAPMRHmUhUCmh/view?usp=sharing
+
+Project Poster
+https://drive.google.com/file/d/1Pa-T23Yi9nUCVgUoZGgFqPiQwftaWab_/view?usp=sharing
+
+Project Video Walkthrough
+https://www.youtube.com/watch?v=vbP3H5vxJ8g
+
+Project Deployment
+https://plswork-a6f1e.firebaseapp.com (Hosting Currently not functional :(. Will be fixed as soon as possible and updated here!)
+
 <b>Motivation</b>
 
 Amidst the hustle and bustle of your busy schedule, you thought about meeting your old friends after a while. Thinking that your friends will be busy, you decided to delay a meetup with them to a later date. You finally decided to contact them, but to your dismay, another year has passed, you find out that your friends are even busier with their schedules. A reunion seems to be impossible to organise. 
 
-Adulting is no easy task. Oftentimes, meeting up with friends and loved ones is delayed not because everyone is busy, but instead due to the fact that coordinating schedules manually is not a small feat, with work and study schedules subject to change. Hence, a single place where groups can come together and organise their group actviities is a neccesity. Two key features that people need have been identified, the generation of common time slots and the tracking of payments.
-
-Personally, having tried to organise group sessions with friends, I find to be extremely cumbersome and often impossible to keep track of everyone's schedules and come up with slots that people are free at. Messaging multiple people individually and keeping track of their free slots on telegram becomes rather annoying to all parties involved. Additionally, it is easy to forget what payments I need to make and who I'm yet to receive from. This problem served as motivation for me to work on this project. 
+Adulting is no easy task. Oftentimes, meeting up with friends and loved ones is delayed not because everyone is busy, but instead due to the fact that coordinating schedules manually is not a small feat, with work and study schedules subject to change. Hence, a single place where groups can come together and organise their group actviities is a neccesity. Two key features that people need have been identified, the setting of a common group calendar and the tracking of payments.
 
 <b>Aim</b>
 
@@ -59,10 +72,10 @@ We hope to be able to provide users with a platform for them to identify common 
 <p><span style="font-weight: 400;">User</span></p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Be able to add my schedule and view my group&rsquo;s schedule</span></p>
+<p><span style="font-weight: 400;">Be able to view my group&rsquo;s schedule</span></p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Identify the appropriate timing for a meetup. (The app suggests this automatically)</span></p>
+<p><span style="font-weight: 400;">Identify the appropriate timing for a meetup through focused chat</span></p>
 </td>
 </tr>
 <tr>
@@ -274,236 +287,184 @@ We hope to be able to provide users with a platform for them to identify common 
 
 <b>Technologies Used</b>
 
-Flutter
+Flutter: Used for the functionalities of the app. 
 
-Firebase
+Firebase: Used for Authentication, Hosting and Firebase Firestore used for the database to store and read data as required.
+
 <br></br>
 <p><strong><em>Features of our App/Design of our System</em></strong></p>
 <p>&nbsp;</p>
-<table>
+<table><colgroup><col /><col /></colgroup>
 <tbody>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Feature</span></p>
+<p dir="ltr">Feature</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Functionality</span></p>
+<p dir="ltr">Functionality</p>
 </td>
 </tr>
 <tr>
 <td colspan="2">
-<p><strong>PlanPal Account Management</strong></p>
+<p dir="ltr">PlanPal Account Management</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Log-in</span></p>
+<p dir="ltr">Log-in</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Allows users to enter their credentials and sign-in to their account of the app if they had already created one. (Milestone 1)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Log-in (With Google)</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Allows users to sign-in to the app using their Google account. (Milestone 1)</span></p>
+<p dir="ltr">Allows users to enter their credentials and sign-in to their account of the app if they had already created one. (Milestone 1)</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Log-out</span></p>
+<p dir="ltr">Log-out</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Allows the users to sign out of their app and brings them back to the log-in page. (Milestone 2)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Sign-up&nbsp;</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Allows users to create a new account with their email-address. (Milestone 1)</span></p>
+<p dir="ltr">Allows the users to sign out of their app and brings them back to the log-in page. (Milestone 2)</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Forgot Password</span></p>
+<p dir="ltr">Sign-up&nbsp;</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Allows users the option to change their password by sending an email to the email account that they used to register their PlanPal account. (Milestone 3)</span></p>
+<p dir="ltr">Allows users to create a new account with their email-address. (Milestone 1)</p>
 </td>
 </tr>
 <tr>
 <td colspan="2">
-<p><strong>Common Slot Generation and Group Management</strong></p>
+<p dir="ltr">Shared Group Features and Group Management</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">My Groups Page</span></p>
+<p dir="ltr">My Groups Page</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Users can click on this button after logging in to view the groups that they are in. Under the My Groups Page, they will see a list of their existing groups and will see options to create new groups or join new groups using the name of those groups. (Milestone 2)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Create New Group (On the My Groups page)</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Users can click on this button to create a new group, by entering a title. (Milestone 2)</span></p>
+<p dir="ltr">Users can click on this button after logging in to view the groups that they are in. Under the My Groups Page, they will see a list of their existing groups and will see options to create new groups or join new groups using the name of those groups. (Milestone 2)</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Join New Group (On the My Groups page)</span></p>
+<p dir="ltr">Create New Group (On the My Groups page)</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Users can join a group by entering the name of the group their friends are already in. (Milestone 2)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Delete Group (On the My Groups page)</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Users can choose to delete a group should they want to. (Milestone 3)</span></p>
+<p dir="ltr">Users can click on this button to create a new group, by entering a title. (Milestone 2)</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Create New Event (After clicking on a group in the My Groups page)</span></p>
+<p dir="ltr">Join New Group (On the My Groups page)</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Users can create an event and set a fixed time period where they want this event to happen (for example, 21 May 21 - 24 May 21). Other users in the same group will be able to view this event. (Milestone 3)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Delete Event (After clicking on a group in the My Groups page)</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Users can delete events if they want to. (Milestone 3)</span></p>
+<p dir="ltr">Users can join a group by entering the name of the group their friends are already in. (Milestone 2)</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Members in this Group (After clicking on a group in the My Groups page)</span></p>
+<p dir="ltr">Create New Event (After clicking on a group in the My Groups page and the calendar option)</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Users can view the people in the group. (Milestone 3)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Leave Group (After clicking on a group in the My Groups page)</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Users can click on this button to leave a group if they want to. (Milestone 3)</span></p>
+<p dir="ltr">Users can create an event and set a fixed time period where they want this event to happen (for example, 21 May 21 - 24 May 21). Other users in the same group will be able to view this event. (Milestone 3)</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Choose Your time slots where you are free (After clicking on an event in a group)</span></p>
+<p dir="ltr">Calendar Navigation (After clicking on a group in the My Groups page and the calendar option)</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Users will be able to look at a calendar (based on the chosen timeframe) and select the time slots where they are free by touching the time slot boxes on their screen. They would also be able to view their group mates' free time slots on this screen as well. </span><strong>Common time slots will be calculated on a continual basis (i.e even if not everyone in the group has entered their time slots) and displayed on this screen </strong><span style="font-weight: 400;">(Milestone 3)</span></p>
+<p dir="ltr">Users will be able to navigate across events through time in the calendar. (Milestone 3)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">Set Topic for focused group chat (After clicking on a group in the My Groups page and the chat option)</p>
+</td>
+<td>
+<p dir="ltr">Users will be able to set a common topic for discussion in the group. (Milestone 3)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">Focused Group Chat (After clicking on a group in the My Groups page and the chat option)</p>
+</td>
+<td>
+<p dir="ltr">Users will be able to chat with the other members in the group in realtime. (Milestone 3)</p>
 </td>
 </tr>
 <tr>
 <td colspan="2">
-<p><strong>My Schedule</strong></p>
+<p dir="ltr">Payment Tracker</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">My Schedule</span></p>
+<p dir="ltr">My Payments&nbsp;</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">After logging in, users can click on this button to view the events they have in a calendar view. (Milestone 3)</span></p>
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<p><strong>Contact List</strong></p>
+<p dir="ltr">After logging in, users can click on this button to view their payment info at a glance. A list of the people who you owe/are owed from will be displayed, each person in a box with one of 2 statements &ldquo;You owe {Person} $x&rdquo; or&nbsp; &ldquo;{Person} owes you $x&rdquo;. Users can also see 4 buttons to log transactions.&nbsp; The 4 buttons are, &lsquo;I Owe Someone!&rsquo;, &lsquo;Someone Owes Me&rsquo;, &lsquo;I have paid someone&rsquo; and &lsquo;Someone has paid me&rsquo;. (Milestone 2)</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">My contacts</span></p>
+<p dir="ltr">The 4 buttons are, &lsquo;I Owe Someone!&rsquo;, &lsquo;Someone Owes Me&rsquo;, &lsquo;I have paid someone&rsquo; and &lsquo;Someone has paid me&rsquo;.&nbsp; (After clicking on the My Payments page)</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">After logging in, users can click on this button to view the full list of people from all their groups.(Milestone 3)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Contact Info (After clicking on a person in My contacts)</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Users will be able to view the contact info of that person (email address) and what groups they share.(Milestone 3)</span></p>
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<p><strong>Payment Tracker</strong></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">My Payments&nbsp;</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">After logging in, users can click on this button to view their payment info at a glance. </span><strong>A list of the people who you owe/are owed from will be displayed, each person in a box with one of 2 statements &ldquo;You owe {Person} $x&rdquo; or&nbsp; &ldquo;{Person} owes you $x&rdquo;. </strong><span style="font-weight: 400;">Users can also see 4 buttons to log transactions.&nbsp; The 4 buttons are, &lsquo;I Owe Someone!&rsquo;, &lsquo;Someone Owes Me&rsquo;, &lsquo;I have paid someone&rsquo; and &lsquo;Someone has paid me&rsquo;. (Milestone 2)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">The 4 buttons are, &lsquo;I Owe Someone!&rsquo;, &lsquo;Someone Owes Me&rsquo;, &lsquo;I have paid someone&rsquo; and &lsquo;Someone has paid me&rsquo;.&nbsp; (After clicking on the My Payments page)</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">These 4 buttons allow people to declare transactional information by keying in the UserID of the other party involved and the amount involved.</span></p>
+<p dir="ltr">These 4 buttons allow people to declare transactional information by keying in the UserID of the other party involved and the amount involved.</p>
 <br />
-<p><span style="font-weight: 400;">The database will log and update with these transactions. MyPayments page with be updated instantaneously and new values will be reflected.&nbsp; (Milestone 2)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Send Reminder (After clicking on the My Payments page)</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Users can click on this button and will be able to send an email reminder to people who owe them money. They can do this by clicking on a person who owes them money and clicking &lsquo;send&rsquo;. (Milestone 3)</span></p>
+<p dir="ltr">The database will log and update with these transactions. MyPayments page with be updated instantaneously and new values will be reflected.&nbsp; (Milestone 2)</p>
 </td>
 </tr>
 <tr>
 <td colspan="2">
-<p><strong>Standard Buttons for Page Navigation</strong></p>
+<p dir="ltr">Standard Buttons for Page Navigation</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Cancel</span></p>
+<p dir="ltr">Cancel</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Goes back to the previous page if someone decides not to perform an action. (Milestone 2)</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Return to HomeScreen</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Goes to the HomeScreen of the App (Milestone 2)</span></p>
+<p dir="ltr">Goes back to the previous page if someone decides not to perform an action. (Milestone 2)</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Action Buttons (e.g. Join Group, Declare Transaction)</span></p>
+<p dir="ltr">Return to HomeScreen</p>
 </td>
 <td>
-<p><span style="font-weight: 400;">Goes back to the main pages for that option. (I.e. back to MyGroups page and back to MyPayments page) (Milestone 2)</span></p>
+<p dir="ltr">Goes to the HomeScreen of the App (Milestone 2)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">Action Buttons (e.g. Join Group, Declare Transaction)</p>
+</td>
+<td>
+<p dir="ltr">Goes back to the main pages for that option. (I.e. back to MyGroups page and back to MyPayments page) (Milestone 2)</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<p dir="ltr">Errors</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">Error messages when logging in/creating an account</p>
+</td>
+<td>
+<p dir="ltr">Error message displayed if incorrect authentication. (Milestone 3)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">Error messages when creating and joining groups.</p>
+</td>
+<td>
+<p dir="ltr">Error message displayed if invalid attempts to create/join groups. (Milestone 3)</p>
 </td>
 </tr>
 </tbody>
@@ -512,57 +473,6 @@ Firebase
 
 Timeline and Schedule
 
-<table>
-<tbody>
-<tr>
-<td>
-<p><span style="font-weight: 400;">Milestone I</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Milestone II</span></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Milestone III</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<ol>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Create the log-in and sign up features. (Firebase Auth)</span></li>
-</ol>
-</td>
-<td>
-<ol>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Finalise log-in and sign-up features</span></li>
-</ol>
-<br />
-<ol>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Complete the implementation of groups. Joining and Leaving options complete. (Firestore)</span></li>
-</ol>
-<br />
-<ol>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Complete the payment tracker feature. (Firestore)</span></li>
-</ol>
-</td>
-<td>
-<ol>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Complete the implementation of event creation and timeslot generation.</span></li>
-</ol>
-<br />
-<ol>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Improvement of UI</span></li>
-</ol>
-<br />
-<ol>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Testing and Bug fixes</span></li>
-</ol>
-</td>
-</tr>
-</tbody>
-</table>
-<p><br /><br /></p>
-Project Log
-<p><br /></p>
 <table>
 <tbody>
 <tr>
@@ -578,13 +488,13 @@ Project Log
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">232</span></p>
+<p><span style="font-weight: 400;">334</span></p>
 </td>
 <td>
-<p><span style="font-weight: 400;">116</span></p>
+<p><span style="font-weight: 400;">167</span></p>
 </td>
 <td>
-<p><span style="font-weight: 400;">116</span></p>
+<p><span style="font-weight: 400;">167</span></p>
 </td>
 </tr>
 </tbody>
@@ -1183,11 +1093,310 @@ Project Log
 <p><span style="font-weight: 400;">Finalizing of READme and code for Milestone 2</span></p>
 </td>
 </tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">29</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Peer Evaluations</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">02/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Reading and doing of peer evaluations</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">30</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Research</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">04/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Further research on how to use firestore for calendar</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">31</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">06/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Coding of the basic calendar using imports from flutter</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">32</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">07/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Coding additional event features for the calendar</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">33</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Team Meeting</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">08/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Discussion on the feasibility of relational databases in calendar and events</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">34</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Indivdual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">11/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Coding and improvements of the calendar feature</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">35</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Reasearch&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">13/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Chat feature using firestore</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">36</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">15/07- 17/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">5</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">5</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Adding of chat function on the group page</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">37</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">19/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Debugging of chat function</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">38</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Group Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">20/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Testing of chat function on localhost</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">39</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Team Meeting</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">22/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Discussion on the implementation of testing</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">40</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Individual Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">23/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Attempting to host&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">41</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Group Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">24/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Testing documentation</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">42</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Group Task</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">24/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Updating of ReadMe and video</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">43</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Group Tasks</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">25/07</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Attempts to host</span></p>
+</td>
+</tr>
 </tbody>
 </table>
 <p>&nbsp;</p>
-User Guide
-https://docs.google.com/document/d/1otOEyy-XAJUIanCvJ4ahWh87KA77Hd05IrBGhXH-qGw/edit?usp=sharing
+
 Resources Used
 https://blog.codemagic.io/flutter-web-firebase-authentication-and-google-sign-in/
 https://github.com/kevinjnguyen/flutter-firebase-registration-ui 
@@ -1196,3 +1405,7 @@ https://www.bacancytechnology.com/blog/email-authentication-using-firebase-auth-
 https://github.com/lohanidamodar/flutter_ui_challenges
 https://blog.codemagic.io/firebase-authentication-google-sign-in-using-flutter/
 https://pusher.com/tutorials/login-ui-flutter
+https://pub.dev/packages/syncfusion_flutter_calendar
+https://www.syncfusion.com/kb/12616/how-to-add-the-appointments-to-firestore-database-using-flutter-calendar
+https://github.com/SyncfusionExamples/appointments-to-firestore-database-flutter-calendar/blob/main/lib/main.dart#L160
+https://help.syncfusion.com/flutter/calendar/month-view
