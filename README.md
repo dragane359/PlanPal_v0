@@ -345,6 +345,13 @@ We hope to be able to provide users with a platform for them to identify common 
 </tbody>
 </table>
 
+![Screenshot (16)](https://user-images.githubusercontent.com/64765004/127022112-53e043c9-20e0-4da5-867d-d78d9f518cbc.png)
+![Screenshot (17)](https://user-images.githubusercontent.com/64765004/127022119-1311bcd5-b649-4744-8afa-e482a9643e08.png)
+![Screenshot (18)](https://user-images.githubusercontent.com/64765004/127022123-f8bf7bb9-71c4-4635-bb63-f7aa1bc0d060.png)
+![Screenshot (19)](https://user-images.githubusercontent.com/64765004/127022131-93904161-60e7-4098-8215-ca70e3c2a428.png)
+![Screenshot (20)](https://user-images.githubusercontent.com/64765004/127022135-f2835120-a495-4ddf-83fa-fdb17ff79346.png)
+![Screenshot (21)](https://user-images.githubusercontent.com/64765004/127022145-37f39c0a-4b75-4ad7-8f3d-d375924893fd.png)
+
 
 <b>Technologies Used</b>
 
@@ -580,13 +587,6 @@ Timeline and Schedule
 </tr>
 </tbody>
 </table>
-
-![Screenshot (16)](https://user-images.githubusercontent.com/64765004/127022112-53e043c9-20e0-4da5-867d-d78d9f518cbc.png)
-![Screenshot (17)](https://user-images.githubusercontent.com/64765004/127022119-1311bcd5-b649-4744-8afa-e482a9643e08.png)
-![Screenshot (18)](https://user-images.githubusercontent.com/64765004/127022123-f8bf7bb9-71c4-4635-bb63-f7aa1bc0d060.png)
-![Screenshot (19)](https://user-images.githubusercontent.com/64765004/127022131-93904161-60e7-4098-8215-ca70e3c2a428.png)
-![Screenshot (20)](https://user-images.githubusercontent.com/64765004/127022135-f2835120-a495-4ddf-83fa-fdb17ff79346.png)
-![Screenshot (21)](https://user-images.githubusercontent.com/64765004/127022145-37f39c0a-4b75-4ad7-8f3d-d375924893fd.png)
 
 
 <table>
