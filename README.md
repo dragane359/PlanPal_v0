@@ -470,8 +470,56 @@ Firebase: Used for Authentication, Hosting and Firebase Firestore used for the d
 </tbody>
 </table>
 <p>&nbsp;</p>
-
 Timeline and Schedule
+<table>
+<tbody>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Milestone I</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Milestone II</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Milestone III</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Create the log-in and sign up features. (Firebase Auth)</span></li>
+</ol>
+</td>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Finalise log-in and sign-up features</span></li>
+</ol>
+<br />
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Complete the implementation of groups. Joining and Leaving options complete. (Firestore)</span></li>
+</ol>
+<br />
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Complete the payment tracker feature. (Firestore)</span></li>
+</ol>
+</td>
+<td>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Complete the implementation of event creation and group chat.</span></li>
+</ol>
+<br />
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Improvement of UI</span></li>
+</ol>
+<br />
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Testing and Bug fixes</span></li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+
 
 <table>
 <tbody>
