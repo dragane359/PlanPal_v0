@@ -72274,14 +72274,14 @@ p=q.a
 p=O.b_(q.b,p.b.bl(0,C.b.b2(p.c.a,"/")+"/friends")).bk(0,f.a.a)
 q=P.asM(g.a.a)
 o=$.wB()
-q=o.lc(0,q)
+q=o.lc(0,-q)
 q=O.hm(P.a8(["They owe me",new O.f9(q,q)],j,i))
 q.toString
 q=p.a.bd(0,q)
 f=O.b_(r,r.gcn().bl(0,n)).bk(0,f.a.a)
 r=f.a
 k=O.b_(f.b,r.b.bl(0,C.b.b2(r.c.a,"/")+"/friends")).bk(0,k.glI().a.c.h(0,m))
-g=o.lc(0,-P.asM(g.a.a))
+g=o.lc(0,P.asM(g.a.a))
 i=O.hm(P.a8(["I owe",new O.f9(g,g)],j,i))
 i.toString
 l.K(0,P.cl([s,q,k.a.bd(0,i)],h))}else{s=P.eC(k.glI().a.c.h(0,"uid"))
