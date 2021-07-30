@@ -44,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       _errorMessage = "error";
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -218,7 +218,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         .collection("users")
                                         .doc(x.user!.uid)
                                         .set({
-                                      'email': emailTextEditController.text,'mygroups':[]
+                                      'email': emailTextEditController.text,
+                                      'mygroups': []
                                     }),
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
@@ -228,7 +229,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     _firestore
                                         .collection("payments")
                                         .doc(emailTextEditController.text)
-                                        .set({'test':"test"}),                            
+                                        .set({'test': "test"}),
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (context) =>
